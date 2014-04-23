@@ -15,7 +15,7 @@ The name comes from the ["Porque no los dos?" meme](http://knowyourmeme.com/meme
 
 ## Usage
 
-(Eventually) To install this module in your current working directory, run
+To install this module in your current working directory, run
 
 ```
 npm install losdos
@@ -52,8 +52,8 @@ routes/index.js
 routes/someobject/
 routes/someobject/someStuff.js
 
-// all files in the same folder are treated the same but you may have multiple files in a
-// directory that you want to group some routes separately
+// all files in the same folder are treated the same but you may have multiple
+// files in a directory that you use to group some routes separately
 routes/someobject/otherStuff.js 
 
 // directories ending in "_id" are added to your path as ":someobject_id"
@@ -69,12 +69,12 @@ File names are ignored!  Make them as expressive as you would like!
 Then, within your routes files themselves:
 
 ```
-// Any api calls use the method method name as an object containing functions which would
-// be called by:
-// app[method](prefix + apiPath + '/directory/path/' + functionName, functionItself);
+// Any api calls use the method method name as an object containing functions
+// which would be called by:
+// app[method](prefix + apiPath + '/directory/path/' + functionName, function);
 exports.post = {
-    // In this case, this would make a POST call at the URL /api/directory/path/somepost
-    // that would route to this function
+    // In this case, this would make a POST call at the URL
+    // /api/directory/path/somepost that would route to this function
     somepost: function(req, res){
         ...
     }
@@ -84,17 +84,20 @@ exports.post = {
 exports.create = function(req, res){
     ...
 };
-// NOTE: create could be any string you want other than index or one of the method names
+// NOTE: create could be any string you want other than index, one of the
+// method names (get, post, put, delete), or the name of a path parameter,
+// e.g., someobject_id
 
-// Index is a special case. It will use the current directory as a path rather than using
-// the name "index"
+// Index is a special case. It will use the current directory as a path rather
+// than using the name "index"
 exports.index = function(req, res){
     ...
 };
 
-// if a directory ending in "_id" is on this file's path, you can make a method with that
-// name and it will call app.param(functionName, functionItself), allowing you to add
-// middleware based on that path parameter
+// if a directory ending in "_id" is on this file's path, you can make a
+// method with that name and it will allowing you to add middleware based on
+// that path parameter by internally calling:
+// app.param(functionName, functionItself)
 exports.someobject_id = function(req, res, next, id){
     ...
 }
