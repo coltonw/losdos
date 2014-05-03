@@ -94,13 +94,25 @@ exports.index = function(req, res){
     ...
 };
 
+// For the common case where there is only one POST, GET, etc. call for
+// this folder, you can use the following shortcut:
+exports.put = function(req, res) {
+    ...
+};
+// instead of
+exports.put = {
+    index: function(req, res) {
+        ...
+    }
+};
+
 // if a directory ending in "_id" is on this file's path, you can make a
 // method with that name and it will allowing you to add middleware based on
 // that path parameter by internally calling:
 // app.param(functionName, functionItself)
 exports.someobject_id = function(req, res, next, id){
     ...
-}
+};
 ```
 
 ## Design Philosophies
