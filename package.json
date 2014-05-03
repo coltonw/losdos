@@ -1,6 +1,6 @@
 {
   "name": "losdos",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Boilerplate for a simple express web application with views and a REST api.",
   "main": "index.js",
   "scripts": {
