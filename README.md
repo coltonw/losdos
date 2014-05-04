@@ -2,6 +2,7 @@
 
 Make a [node.js](http://nodejs.org)/[express](http://expressjs.com) web application with embedded views **and** a REST interface.
 
+[![Build Status](https://travis-ci.org/coltonw/losdos.svg?branch=master)](https://travis-ci.org/coltonw/losdos)
 
 ## Description
 
