@@ -4,14 +4,14 @@
   "description": "Boilerplate for a simple express web application with views and a REST api.",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha --require blanket",
-    "coverage": "./node_modules/.bin/mocha --require blanket -R html-cov > coverage.html",
-    "coveralls": "./node_modules/.bin/mocha --require blanket --reporter mocha-lcov-reporter"
+    "test": "./node_modules/.bin/mocha",
+    "report": "./node_modules/.bin/mocha -R html-cov > coverage.html",
+    "coveralls": "coveralls.sh"
   },
   "config": {
     "blanket": {
-      "pattern": "lib",
-      "data-cover-never": "node_modules"
+        "pattern": "lib",
+        "data-cover-never": "node_modules"
     }
   },
   "repository": {

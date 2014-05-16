@@ -1,7 +1,11 @@
 var request = require('supertest'),
-    app = require('express')();
+    app = require('express')(),
+    blanket = require('blanket')({
+        "pattern": "lib",
+        "data-cover-never": "node_modules"
+    });
 
-require('../lib/losdos')(app, { verbose: true, routes: __dirname + '/routes' });
+require('../lib/losdos')(app, { verbose: false, routes: __dirname + '/routes' });
 
 describe('routes/stuff/mockstuff.js#get', function(){
     describe('GET /api/stuff', function(){
