@@ -8,12 +8,6 @@
     "report": "./node_modules/.bin/mocha -R html-cov > coverage.html",
     "coveralls": "coveralls.sh"
   },
-  "config": {
-    "blanket": {
-        "pattern": "lib",
-        "data-cover-never": "node_modules"
-    }
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/coltonw/losdos.git"
