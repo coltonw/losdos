@@ -6,7 +6,7 @@
   "scripts": {
     "test": "./node_modules/.bin/mocha",
     "report": "./node_modules/.bin/mocha -R html-cov > coverage.html",
-    "coveralls": "bash coveralls.sh"
+    "coveralls": "sh coveralls.sh"
   },
   "repository": {
     "type": "git",
