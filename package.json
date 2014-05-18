@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha",
-    "report": "./node_modules/.bin/mocha -R html-cov > coverage.html",
-    "coveralls": "sh coveralls.sh"
+    "report": "./node_modules/.bin/mocha -R html-cov > coverage.html"
   },
   "repository": {
     "type": "git",
