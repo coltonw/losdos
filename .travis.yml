@@ -2,6 +2,5 @@ language: node_js
 node_js:
   - "0.10"
 after_script:
-  - ls -la
   - chmod 777 coveralls.sh
   - ./coveralls.sh
