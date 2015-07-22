@@ -3,8 +3,6 @@ var config = require('../config'),
     app = require('express')(),
     blanket = require('blanket')(config.blanket);
 
-// We don't want output but we do want to test that logging does not break the program
-console.log = function() {};
 require('../lib/losdos')(app, { verbose: true, routes: __dirname + '/routes' });
 
 describe('routes/stuff/mockstuff.js#get', function(){
